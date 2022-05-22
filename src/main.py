@@ -8,6 +8,10 @@ def editVideo(fname,time,width,fps):
     basename=os.path.basename(fname)[:-4]
     dir='../output/'+basename
     try:
+        os.makedirs('../output')
+    except FileExistsError:
+        print('folder exists')
+    try:
         os.makedirs(dir)
     except FileExistsError:
         print('folder exists')
